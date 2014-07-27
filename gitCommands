@@ -1,4 +1,34 @@
 git add filename
 git push --message
 git pull
+	- performs 2 actions.  Fetches the changes from the remote repository and merges them into the current branch.
+git fetch
+	- performs the fetching action of downloading the new commits, but skips the merge steps (which you can manually perform later.)
 git push
+	--set-upstream
+	--set-upstream origin new branch
+		-changes to default commits to the new branch
+git status
+git clone
+rm -rf depository location/name
+	-removes the depository
+git merge
+
+Branches allow two independent tracks through history to be created and committed to without  either modifying the other.   Programmers can happily commit to their independent branch without fear of disrupting the work of another branch.
+
+Branching allows two independent tracks of development to occur at once.  For example one branch develops version 2 while the other branch fixes bugs in version 1.  Some programmers will create new branches whenever they work on a new bug fix or feature and then integrate these branches at a later point.
+
+git branch branch name
+git branch(to display the different branches)
+git branch --track
+	-combined with a start point will set the upstream for the branch (similarly to git push --set-upstream but without pushing anything remotely yet.
+
+git branch can take a second argument with the starting point for the branch.  This defaults to the current branch you're on; for example, git branch chapter-two is the equivalent of git branch chapter-two master if you are already on the master branch.  This can be used to create branches from previous commits, which is sometimes useful if, say, the current master branch state has broken unit tests that you need to be working.
+
+git checkout
+	- changes to the new local branch?  Switchesto anotther branch copies the contents of another branch into Git's working directory.  git checkout is requesting the checkout of a particular branch so the current state of that branch is checked out into the working directory.
+
+	-Make sure you've committed any changes on the current branch before checking out a new branch.  If you don't do this git will refuse to check out the new branch if there are changes in that branch to a file with uncommitted changes.
+
+To change to the new documentation branch
+git checkout documentation
