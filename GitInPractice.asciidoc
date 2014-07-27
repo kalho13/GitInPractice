@@ -1,2 +1,3 @@
 test row
-new row with sublime
+new row with sublime \n
+a now for a new line with a break
