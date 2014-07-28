@@ -17,6 +17,7 @@ rm -rf depository location/name
 git merge
 =======
 git merge path (merges this path with the one you have currently checked out [switched to])
+git merge 'branch name' (brings the branch name into the current branch)
 >>>>>>> documentation
 	-Brings all commits from separate-files branch into master branch.  Those commits then become part of the history of the branch.  After a merge, you may decide to keep the existing branch around to add more commits to it and perhaps merge again at a later point.  Alternatively you may delete the branch and make future commits to the Git default master and create another branch in the future when needed.
 
@@ -28,7 +29,7 @@ Branches allow two independent tracks through history to be created and committe
 
 Branching allows two independent tracks of development to occur at once.  For example one branch develops version 2 while the other branch fixes bugs in version 1.  Some programmers will create new branches whenever they work on a new bug fix or feature and then integrate these branches at a later point.
 
-git branch branch name
+git branch 'branch name'
 git branch(to display the different branches)
 git branch --track
 	-combined with a start point will set the upstream for the branch (similarly to git push --set-upstream but without pushing anything remotely yet.
