@@ -24,6 +24,8 @@ git merge 'branch name' (brings the branch name into the current branch)
 	merge type of fast-forward merge means that no merge commit (a commit with multiple parents) was needed, so none was made.
 
 	Can get conflicts if there are changes to the same file in multiple branches.
+	
+	How do I mark as merge conflict as resolved?
 
 Branches allow two independent tracks through history to be created and committed to without  either modifying the other.   Programmers can happily commit to their independent branch without fear of disrupting the work of another branch.
 
