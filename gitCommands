@@ -3,7 +3,7 @@ git push --message
 git pull
 	- performs 2 actions.  Fetches the changes from the remote repository and merges them into the current branch.
 git fetch
-	- performs the fetching action of downloading the new commits, but skips the merge steps (which you can manually perform later.)
+	- performs the fetching action of downloading the new commits, but skips the merge steps (which you can 		manually perform later.)
 git push
 	--set-upstream
 	--set-upstream origin new branch
@@ -12,14 +12,15 @@ git status
 git clone
 rm -rf depository location/name
 	-removes the depository
-<<<<<<< HEAD
+<<<<<<< HEAD (conflict markings)
 
 git merge
 =======
 git merge path (merges this path with the one you have currently checked out [switched to])
 git merge 'branch name' (brings the branch name into the current branch)
+
 >>>>>>> documentation
-	-Brings all commits from separate-files branch into master branch.  Those commits then become part of the history of the branch.  After a merge, you may decide to keep the existing branch around to add more commits to it and perhaps merge again at a later point.  Alternatively you may delete the branch and make future commits to the Git default master and create another branch in the future when needed.
+	-Brings all commits from separate-files branch into master branch.  Those commits then become part of the 		history of the branch.  After a merge, you may decide to keep the existing branch around to add more commits 		to it and perhaps merge again at a later point.  Alternatively you may delete the branch and make future 		commits to the Git default master and create another branch in the future when needed.
 
 	merge type of fast-forward merge means that no merge commit (a commit with multiple parents) was needed, so 		none was made.
 
@@ -33,27 +34,35 @@ git merge 'branch name' (brings the branch name into the current branch)
 	
 	How do I mark as merge conflict as resolved?
 
-Branches allow two independent tracks through history to be created and committed to without  either modifying the other.   Programmers can happily commit to their independent branch without fear of disrupting the work of another branch.
+	Branches allow two independent tracks through history to be created and committed to without  either modifying 	the other.   Programmers can happily commit to their independent branch without fear of disrupting the work of another 	branch.
 
-Branching allows two independent tracks of development to occur at once.  For example one branch develops version 2 while the other branch fixes bugs in version 1.  Some programmers will create new branches whenever they work on a new bug fix or feature and then integrate these branches at a later point.
+	Branching allows two independent tracks of development to occur at once.  For example one branch develops 		version 2 while the other branch fixes bugs in version 1.  Some programmers will create new branches whenever 	they work on a new bug fix or feature and then integrate these branches at a later point.
 
 git branch 'branch name'
 git branch(to display the different branches)
 git branch --track
-	-combined with a start point will set the upstream for the branch (similarly to git push --set-upstream but without pushing anything remotely yet.
+	-combined with a start point will set the upstream for the branch (similarly to git push --set-upstream but 		without pushing anything remotely yet.
 
-git branch can take a second argument with the starting point for the branch.  This defaults to the current branch you're on; for example, git branch chapter-two is the equivalent of git branch chapter-two master if you are already on the master branch.  This can be used to create branches from previous commits, which is sometimes useful if, say, the current master branch state has broken unit tests that you need to be working.
+	git branch can take a second argument with the starting point for the branch.  This defaults to the current 		branch you're on; for example, git branch chapter-two is the equivalent of git branch chapter-two master if 		you are already on the master branch.  This can be used to create branches from previous commits, which is 		sometimes useful if, say, the current master branch state has broken unit tests that you need to be working.
 
 git checkout
 	- changes to the new local branch?  Switchesto anotther branch copies the contents of another branch into Git's 	working directory.  git checkout is requesting the checkout of a particular branch so the current state of that 	branch is checked out into the working directory.
 
 	-Make sure you've committed any changes on the current branch before checking out a new branch.  If you don't 		do this git will refuse to check out the new branch if there are changes in that branch to a file with 			uncommitted changes.
 	
-To change to the new documentation branch
-git checkout documentation
 
-rebase is a method of history rewriting in Git that is similar to a merge.  A rebase involves changing he parent of a commit to point to another.  Changing the parent of a separate branch from the first commit in the master branch to the last commit in the master branch, all of the content changes from the master branch (added after the branch was created) are now included with the separate branch.  (Wouldn't these get merged using the merge command?)
+git checkout documentation
+	To change to the new documentation branch
+	
+git rebase
+
+	rebase is a method of history rewriting in Git that is similar to a merge.  A rebase involves changing he 		parent of a commit to point to another.  Changing the parent of a separate branch from the first commit in the 	master branch to the last commit in the master branch, all of the content changes from the master branch (added after 	the branch was created) are now included with the separate branch.  (Wouldn't these get merged using the merge 			command?)
 
 	-This means all the content changes from the master branch are now included in the separate-files branch and 		any conflicts were manually resolved but weren’t stored (as they would be in a merge conflict).
 
-In Git, once a branch has been merged, the history of the branch is still visible in the history and the branch can be safely deleted as a merged branch is, at that point, just a ref to an existing commit in the history of the branch it was merged into.
+	In Git, once a branch has been merged, the history of the branch is still visible in the history and the branch 	can be safely deleted as a merged branch is, at that point, just a ref to an existing commit in the history of 	the branch it was merged into.
+	
+git delete
+git push --delete origin chapter-two (this deletes the branch called chapter-two on the server)(do this from master)
+
+	Sometimes branches in version control systems are kept around for a long time and sometimes they’re very 		temporary. A long-running branch may be one that represents the version deployed to a particular server. A 		short-running branch may be a single bug fix or feature that has been completed. In Git, once a branch has 		been merged, the history of the branch is still visible in the history and the branch can be safely deleted 	as a merged branch is, at that point, just a ref to an existing commit in the history of the branch it was merged 		into.
