@@ -12,11 +12,17 @@ git status
 git clone
 rm -rf depository location/name
 	-removes the depository
+<<<<<<< HEAD
 
 git merge
+=======
+git merge path (merges this path with the one you have currently checked out [switched to])
+>>>>>>> documentation
 	-Brings all commits from separate-files branch into master branch.  Those commits then become part of the history of the branch.  After a merge, you may decide to keep the existing branch around to add more commits to it and perhaps merge again at a later point.  Alternatively you may delete the branch and make future commits to the Git default master and create another branch in the future when needed.
 
 	merge type of fast-forward merge means that no merge commit (a commit with multiple parents) was needed, so none was made.
+
+	Can get conflicts if there are changes to the same file in multiple branches.
 
 Branches allow two independent tracks through history to be created and committed to without  either modifying the other.   Programmers can happily commit to their independent branch without fear of disrupting the work of another branch.
 
@@ -36,3 +42,7 @@ git checkout
 
 To change to the new documentation branch
 git checkout documentation
+
+rebase is a method of history rewriting in Git that is similar to a merge.  A rebase involves changing he parent of a commit to point to another.  Changing the parent of a separate branch from the first commit in the master branch to the last commit in the master branch, all of the content changes from the master branch (added after the branch was created) are now included with the separate branch.
+
+In Git, once a branch has been merged, the history of the branch is still visible in the history and the branch can be safely deleted as a merged branch is, at that point, just a ref to an existing commit in the history of the branch it was merged into.
