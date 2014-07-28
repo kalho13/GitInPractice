@@ -63,6 +63,13 @@ git rebase
 	In Git, once a branch has been merged, the history of the branch is still visible in the history and the branch 	can be safely deleted as a merged branch is, at that point, just a ref to an existing commit in the history of 	the branch it was merged into.
 	
 git delete
-git push --delete origin chapter-two (this deletes the branch called chapter-two on the server)(do this from master)
+git push --delete origin chapter-two 
+	-this deletes the remote branch called chapter-two on the server)(do this from master
+	
+git branch --delete chapter-two 
+	-This deletes the local branch after it has been merged.
 
 	Sometimes branches in version control systems are kept around for a long time and sometimes they’re very 		temporary. A long-running branch may be one that represents the version deployed to a particular server. A 		short-running branch may be a single bug fix or feature that has been completed. In Git, once a branch has 		been merged, the history of the branch is still visible in the history and the branch can be safely deleted 	as a merged branch is, at that point, just a ref to an existing commit in the history of the branch it was merged 		into.
+	
+	Why delete the remote branch before the local branch?
+	We had merged all the chapter-two changes into the master branch and pushed this to origin/master. As a result, 	the chapter-two and origin/chapter-two branches are no longer needed. But Git will refuse to delete a local 		branch with git branch --delete if it hasn’t been merged into the current branch or its changes haven’t been 		pushed to its tracking branch (origin/chapter-two in this case). Deleting origin/chapter-two first means that 	the local chapter-two branch can be deleted by git branch --delete without Git complaining that chapter-two has 		changes that need pushed to origin/chapter-two.
