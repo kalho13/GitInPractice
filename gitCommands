@@ -36,10 +36,8 @@ git merge [branch name]
 
 	Can get conflicts if there are changes to the same file in multiple branches.
 	
-	When conflicts have been resolved, a merge commit can be made. This will
-	store the two parent commits and the conflicts that were resolved so they can be
-	inspected in the future. Unfortunately sometimes people will pick the wrong option
-	or merge incorrectly, so it’s good to be able to later see what conflicts they had to
+	When conflicts have been resolved, a merge commit can be made. This will store the two parent commits and the conflicts that were resolved so they can be
+	inspected in the future. Unfortunately sometimes people will pick the wrong option 	or merge incorrectly, so it’s good to be able to later see what conflicts they had to
 	resolve.
 	
 	How do I mark as merge conflict as resolved?
@@ -55,14 +53,14 @@ git branch
 	
 git branch --track
 
-	combined with a start point will set the upstream for the branch (similarly to git push --set-upstream but 		without pushing anything remotely yet.
+	combined with a start point will set the upstream for the branch (similarly to git push --set-upstream but 	without pushing anything remotely yet.
 
-	git branch can take a second argument with the starting point for the branch.  This defaults to the current 		branch you're on; for example, git branch chapter-two is the equivalent of git branch chapter-two master if 	you are already on the master branch.  This can be used to create branches from previous commits, which is 			sometimes useful if, say, the current master branch state has broken unit tests that you need to be 		working.
+	git branch can take a second argument with the starting point for the branch.  This defaults to the current branch you're on; for example, git branch chapter-two is the equivalent of git branch chapter-two master if 	you are already on the master branch.  This can be used to create branches from previous commits, which is 			sometimes useful if, say, the current master branch state has broken unit tests that you need to be 		working.
 
 git checkout
-	changes to the new local branch?  Switchesto anotther branch copies the contents of another branch into 		Git's working directory.  git checkout is requesting the checkout of a particular branch so the current 		state of that branch is checked out into the working directory.
+	changes to the new local branch?  Switchesto anotther branch copies the contents of another branch into Git's working directory.  git checkout is requesting the checkout of a particular branch so the current 		state of that branch is checked out into the working directory.
 
-	Make sure you've committed any changes on the current branch before checking out a new branch.  If you don't 		do this git will refuse to check out the new branch if there are changes in that branch to a file with 			uncommitted changes.
+	Make sure you've committed any changes on the current branch before checking out a new branch.  If you don't do this git will refuse to check out the new branch if there are changes in that branch to a file with 			uncommitted changes.
 	
 
 git checkout [branch name]
