@@ -1,8 +1,11 @@
 git add [filename] 
 	--force (adds to repository even if file extension in .gitignore)
+	
 git push --message
+
 git pull
 	performs 2 actions.  Fetches the changes from the remote repository and merges them into the current branch.
+	
 git fetch
 	- performs the fetching action of downloading the new commits, but skips the merge steps (which you can 		manually perform later.)
 git push
